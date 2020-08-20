@@ -1,11 +1,11 @@
 FROM ubuntu
 LABEL maintainer=zern
 # 安装mercurial版本管理工具并下载源码
+RUN mkdir  -p /opt/jdk/
+WORKDIR /opt/jdk/
 RUN apt-get update  \
 	&& apt-get install -y mercurial \
-	&& hg clone http://hg.openjdk.java.net/jdk8u/jdk8u/
-RUN cd jdk8u && bash ./get_source.sh 
+	&& hg clone http://hg.openjdk.java.net/jdk8u/jdk8u/ openjdk8u \
+    && cd openjdk8u && bash ./get_source.sh 
 
-RUN mkdir -p /opt/jdk && mv jdk8u /opt/jdk/openjdk8u
-WORKDIR /opt/jdk/openjdk8u
 CMD bash
