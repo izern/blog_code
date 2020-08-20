@@ -1,0 +1,15 @@
+*.class
+*.jar
+*.war
+target/
+.idea/
+.vscode/
+
+*.log
+
+*.ctxt
+
+.mtj.tmp/
+
+hs_err_pid*
+
