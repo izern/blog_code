@@ -1,0 +1,3 @@
+FROM case-base:1-alpine
+ADD helloworld2.sh /
+CMD ["sh","helloworld2.sh"]

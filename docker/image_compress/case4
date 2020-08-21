@@ -1,0 +1,4 @@
+FROM alpine:3.12
+ADD helloworld2.sh /
+ENV LANG=C.UTF-8
+CMD ["sh","/helloworld2.sh"]
