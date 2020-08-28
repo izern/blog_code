@@ -59,7 +59,7 @@ public class RSATest {
         byte[] encrypt = RSA.encrypt(srcBytes, keyPair.getPublic());
         byte[] decrypt = RSA.decrypt(encrypt, keyPair.getPrivate());
         Assert.assertEquals("解密数据与原文不符", PlainStringCoder.INSTANCE.encodeString(decrypt), src);
-        System.out.println(String.format("%d bit %s verify encrypt done.", bit));
+        System.out.println(String.format("%d bit verify encrypt done.", bit));
       } catch (GeneralSecurityException e) {
         e.printStackTrace();
       }
@@ -76,7 +76,7 @@ public class RSATest {
           byte[] sign = RSA.sign(srcBytes, keyPair.getPrivate(), signAlgorithms);
           boolean verifySign = RSA.verifySign(srcBytes, sign, keyPair.getPublic(), signAlgorithms);
           Assert.assertTrue("签名无法验证，当前签名算法为" + signAlgorithms, verifySign);
-          System.out.println(String.format("%d bit %s verify sign done.", bit, signAlgorithms));
+          System.out.println(String.format("%d bit %s verify sign done.", bit, signAlgorithms.toString()));
         } catch (GeneralSecurityException e) {
           e.printStackTrace();
         }

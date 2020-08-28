@@ -60,6 +60,9 @@ public class CustomClassLoader extends ClassLoader {
 
     File file = new File(filePath);
     if (!file.exists()) {
+      if (filePath.contains("target/test-classes")) {
+        return getData(filePath.replace("target/test-classes", "target/classes"));
+      }
       throw new FileNotFoundException(filePath);
     }
 

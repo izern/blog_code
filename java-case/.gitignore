@@ -2,6 +2,7 @@
 *.jar
 *.war
 target/
+out/
 .idea/
 .vscode/
 
